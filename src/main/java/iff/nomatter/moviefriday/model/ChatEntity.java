@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 @Entity(name = "Chat")
@@ -17,5 +17,5 @@ public class ChatEntity {
     private Long id;
 
     @Column(name = "last_call")
-    private LocalDateTime previousGetRandomMovie;
+    private LocalDate previousGetRandomMovie;
 }
