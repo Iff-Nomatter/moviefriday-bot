@@ -7,8 +7,8 @@ public class MovieMapper {
         Movie movie = new Movie();
         movie.setYear(movieDto.getYear());
         movie.setFilmLength(movieDto.getFilmLength());
-        movie.setNameRu(movieDto.getNameRu());
-        movie.setNameEn(movieDto.getNameEn());
+        movie.setNameRu(movieDto.getNameRu() == null ? "" : movieDto.getNameRu());
+        movie.setNameEn(movieDto.getNameEn() == null ? "" : movieDto.getNameEn());
         movie.setPosterUrlPreview(movieDto.getPosterUrlPreview());
         movie.setDescription(movieDto.getDescription().length() > 500 ? movieDto.getDescription().substring(0, 500) : movieDto.getDescription());
         movie.setChatId(chatId);
