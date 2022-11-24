@@ -10,7 +10,7 @@ public class MovieMapper {
         movie.setNameRu(movieDto.getNameRu());
         movie.setNameEn(movieDto.getNameEn());
         movie.setPosterUrlPreview(movieDto.getPosterUrlPreview());
-        movie.setDescription(movieDto.getDescription());
+        movie.setDescription(movieDto.getDescription().length() > 500 ? movieDto.getDescription().substring(0, 500) : movieDto.getDescription());
         movie.setChatId(chatId);
         return movie;
     }
