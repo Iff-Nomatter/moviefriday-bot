@@ -41,6 +41,9 @@ public class ChatService {
             LocalDateTime requestTime = LocalDateTime.now();
             LocalDateTime tempDate = LocalDateTime.from(requestTime);
             long hours = tempDate.until(nextRandomCall, ChronoUnit.HOURS);
+            if (hours <= 9) {
+                howLongForNextRandomCall.append("0");
+            }
             tempDate = tempDate.plusHours(hours);
             howLongForNextRandomCall.append(hours).append(":");
             long minutes = tempDate.until(nextRandomCall, ChronoUnit.MINUTES);
